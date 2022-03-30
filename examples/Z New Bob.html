@@ -36,9 +36,8 @@
       });
       $(window).load(function () {
       $(".trigger_popup_fricc").click(function() {
-        getInfo(document.getElementsByClassName("bob").value, 0)
+        getInfo(document.getElementById("search_bar").value, 0)
         $('.hover_bkgr_fricc').show();
-        $('.button').hide();
       });
       /*$('.hover_bkgr_fricc').click(function(){
         $('.hover_bkgr_fricc').hide();
@@ -112,7 +111,7 @@
       right: -50px;
       z-index:1;
     }
-    #search_bar{
+    .bob{
       position:relative;
       top: 50px;
       right: -50px;
@@ -127,9 +126,10 @@
     </style>
   </head>
   <body>
-    
-        <input id="search_bar" class="bob" type="text" placeholder="Enter your country or animal">
-    <button class="trigger_popup_fricc" id="search-bar">Search</button>
+  <div class="bob"
+    <input id="search_bar" type="text" placeholder="Enter your country or animal">
+    <button class="trigger_popup_fricc" >Search</button>
+  </div>
     <div id="vmap" style="width: 100%; height: 600px;"></div>
     <div class="hover_bkgr_fricc">
     <span class="helper"></span>
