@@ -79,19 +79,12 @@ function getInfo(object, country) {
     getCountry(object)
 
   } else if (country == 0) {
-  
-    let x = 0
-    for (let i = 0; i < countries.length; i++) {
-        if (countries[i] == country) {
-            x = 1
-    }
-    if (x == 1) {
+
+    if (countries.indexOf(object) != -1) {
         getCountry(object)
     } else {
         getAnimal(object)
     }
   }
-  
+ 
   }
-
-}
