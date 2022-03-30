@@ -36,7 +36,7 @@
       });
       $(window).load(function () {
       $(".trigger_popup_fricc").click(function() {
-        getInfo(document.getElementById("search-bar").value, 0)
+        getInfo(document.getElementByClassName("bob").value, 0)
         $('.hover_bkgr_fricc').show();
         $('.button').hide();
       });
@@ -128,7 +128,7 @@
   </head>
   <body>
     
-        <input id="search_bar" type="text" placeholder="Enter your country or animal">
+        <input id="search_bar" class="bob" type="text" placeholder="Enter your country or animal">
     <button class="trigger_popup_fricc" id="search-bar">Search</button>
     <div id="vmap" style="width: 100%; height: 600px;"></div>
     <div class="hover_bkgr_fricc">
