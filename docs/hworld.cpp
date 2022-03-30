@@ -7,4 +7,3 @@ int main(){
     cin >> x; // Get user input from the keyboard
     cout << "Your number is: " << x; // Display the input value
     return 0;
-}
