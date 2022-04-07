@@ -14,7 +14,7 @@ function dowiki(place) {
             var obj = data.query.pages;
             var ob = Object.keys(obj)[0];
             try{
-                document.getElementById('text').textContent = obj[ob]["extract"].substring(0,100);//substring limits char amount
+                document.getElementById('text').textContent = obj[ob]["extract"] //.substring(0,100); //substring limits char amount
             }
             catch (err) {
                 document.getElementById('text').innerHTML = "FAILED TO CONNECT TO WIKIPEDIA";
