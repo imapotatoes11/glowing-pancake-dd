@@ -4,6 +4,33 @@ animals = [['Sei whale', 'Blue whale', 'North atlantic right whale', 'North paci
 countries = ["Canada", "United States of America"]
 
 
+
+function limitWords(textToLimit, wordLimit)
+{
+var finalText = "";
+
+var text2 = textToLimit.replace(/\s+/g, ' ');
+
+var text3 = text2.split(' ');
+
+var numberOfWords = text3.length;
+
+var i=0;
+
+if(numberOfWords > wordLimit)
+{
+for(i=0; i< wordLimit; i++)
+finalText = finalText+' '+ text3[i]+' ';
+
+return finalText+"…";
+}
+else return textToLimit;
+}
+
+
+
+
+
 function dowiki(place) {
         var URL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=';
 
@@ -14,7 +41,9 @@ function dowiki(place) {
             var obj = data.query.pages;
             var ob = Object.keys(obj)[0];
             try{
-                document.getElementById('text').textContent = obj[ob]["extract"] //.substring(0,100); //substring limits char amount
+                var x=limitWords(obj[ob]["extract"],100)
+                //document.getElementById('text').textContent = obj[ob]["extract"] //.substring(0,100); //substring limits char amount
+                document.getElementById('text').textContent=x;
             }
             catch (err) {
                 document.getElementById('text').innerHTML = "FAILED TO CONNECT TO WIKIPEDIA";
